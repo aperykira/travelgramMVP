@@ -1,0 +1,634 @@
+{
+  "pack_name": "AI Travel Assistant MVP Curated Static Knowledge Pack",
+  "version": "1.0",
+  "created_date": "2026-06-15",
+  "purpose": "A small, static grounding dataset for an MVP AI travel assistant. Use this instead of full RAG for early demos and testing.",
+  "usage_guidance": {
+    "recommended_use": [
+      "Inject the relevant destination profile into the model prompt when the user selects or is matched to a destination.",
+      "Use tags and match_notes to support destination recommendations.",
+      "Use day_modules and pacing_notes to generate realistic itinerary drafts.",
+      "Use verification_required fields to prevent hallucinations around dynamic facts."
+    ],
+    "do_not_use_for": [
+      "Live prices",
+      "Hotel or flight availability",
+      "Current opening hours",
+      "Current restaurant menus",
+      "Temporary closures",
+      "Live event schedules",
+      "Visa/legal advice"
+    ],
+    "standard_guardrail": "Exact prices, hours, availability, events, and bookings should be verified through live or official sources before the user acts."
+  },
+  "destinations": [
+    {
+      "destination_id": "kyoto_japan",
+      "destination": "Kyoto",
+      "country": "Japan",
+      "summary": "Kyoto is a strong match for travelers interested in Japanese culture, temples and shrines, traditional districts, food markets, cafés, gardens, and slower-paced walking itineraries.",
+      "best_for_tags": [
+        "culture",
+        "temples",
+        "food",
+        "cafes",
+        "walkable neighborhoods",
+        "traditional architecture",
+        "slow travel",
+        "aesthetic travel"
+      ],
+      "travel_styles": [
+        "food explorer",
+        "cultural explorer",
+        "slow-paced",
+        "boutique/aesthetic"
+      ],
+      "known_for_stable": [
+        "Temples and shrines",
+        "Historic/traditional districts",
+        "Japanese cultural experiences",
+        "Food and drink experiences",
+        "Gardens and scenic walking areas"
+      ],
+      "areas_or_neighborhoods": [
+        {
+          "name": "Higashiyama",
+          "best_for": [
+            "traditional streets",
+            "temples",
+            "scenic walking"
+          ],
+          "notes": "Useful for culturally focused walking routes."
+        },
+        {
+          "name": "Gion",
+          "best_for": [
+            "traditional atmosphere",
+            "evening walks",
+            "culture"
+          ],
+          "notes": "Good for users who saved traditional or atmospheric content."
+        },
+        {
+          "name": "Arashiyama",
+          "best_for": [
+            "nature",
+            "scenic walks",
+            "gardens"
+          ],
+          "notes": "Good for nature and slow-paced itinerary modules."
+        },
+        {
+          "name": "Central Kyoto / Nishiki Market area",
+          "best_for": [
+            "food",
+            "markets",
+            "shopping"
+          ],
+          "notes": "Useful for food-focused users; verify current shop hours."
+        }
+      ],
+      "experience_categories": [
+        "Temple and shrine visits",
+        "Food market browsing",
+        "Matcha/café experiences",
+        "Traditional district walks",
+        "Garden and nature walks",
+        "Cultural workshops"
+      ],
+      "sample_day_modules": [
+        {
+          "module_name": "Food + traditional streets",
+          "morning": "Explore a traditional district and nearby temple area.",
+          "afternoon": "Browse a food market or café-focused area.",
+          "evening": "Keep the evening relaxed with a walk in an atmospheric district.",
+          "why_this_fits": "Works well for users interested in food, culture, cafés, and slow-paced exploration.",
+          "what_to_verify": [
+            "Current opening hours",
+            "Market/vendor availability",
+            "Reservation requirements"
+          ]
+        },
+        {
+          "module_name": "Nature + culture",
+          "morning": "Visit a scenic nature district or garden area.",
+          "afternoon": "Add a nearby cultural site or walking route.",
+          "evening": "Leave flexible time for dinner or rest.",
+          "why_this_fits": "Good for users who saved nature, gardens, and quiet cultural content.",
+          "what_to_verify": [
+            "Transit times",
+            "Current site hours",
+            "Seasonal conditions"
+          ]
+        }
+      ],
+      "pacing_notes": "Kyoto itineraries should avoid cramming too many temples or districts into one day. Group by area and include walking/rest time.",
+      "booking_readiness": [
+        "Book accommodation near preferred areas or transit hubs.",
+        "Reserve high-demand cultural experiences if applicable.",
+        "Verify current hours for markets, temples, cafés, and seasonal events."
+      ],
+      "verification_required": [
+        "hours",
+        "prices",
+        "restaurant availability",
+        "seasonal events",
+        "crowd levels",
+        "transport schedules"
+      ],
+      "source_notes": [
+        "Kyoto City Official Guide: Kyoto tourism resources include areas, activities, history/religion, art/culture, food/drink, nature/outdoors.",
+        "Japan Guide: Kyoto has many temples, shrines, historically significant structures, and a fresh food market street in central Kyoto."
+      ]
+    },
+    {
+      "destination_id": "lisbon_portugal",
+      "destination": "Lisbon",
+      "country": "Portugal",
+      "summary": "Lisbon is a strong match for travelers interested in walkable-but-hilly city exploration, viewpoints, tiled streets, cafés, food halls, historic districts, waterfront areas, and relaxed cultural itineraries.",
+      "best_for_tags": [
+        "cafes",
+        "food",
+        "viewpoints",
+        "walkable city",
+        "historic districts",
+        "coastal/riverfront",
+        "tiles",
+        "relaxed city break"
+      ],
+      "travel_styles": [
+        "food explorer",
+        "urban wanderer",
+        "aesthetic traveler",
+        "relaxed pace"
+      ],
+      "known_for_stable": [
+        "Miradouros/viewpoints",
+        "Historic districts",
+        "Tile and museum culture",
+        "Pastel de nata / food experiences",
+        "Waterfront areas along the Tagus"
+      ],
+      "areas_or_neighborhoods": [
+        {
+          "name": "Alfama",
+          "best_for": [
+            "historic streets",
+            "viewpoints",
+            "atmosphere"
+          ],
+          "notes": "Useful for scenic walking routes."
+        },
+        {
+          "name": "Baixa / Chiado",
+          "best_for": [
+            "central sightseeing",
+            "shopping",
+            "cafés"
+          ],
+          "notes": "Good central base for first-time visitors."
+        },
+        {
+          "name": "Bairro Alto",
+          "best_for": [
+            "dining",
+            "nightlife"
+          ],
+          "notes": "Good for evening-oriented travelers; verify current venue details."
+        },
+        {
+          "name": "Cais do Sodré / Mercado da Ribeira area",
+          "best_for": [
+            "food hall",
+            "waterfront access",
+            "casual dining"
+          ],
+          "notes": "Useful for food-focused itinerary modules."
+        },
+        {
+          "name": "Belém",
+          "best_for": [
+            "monuments",
+            "pastel de nata",
+            "riverfront"
+          ],
+          "notes": "Often works as a half-day module."
+        }
+      ],
+      "experience_categories": [
+        "Viewpoint walks",
+        "Café hopping",
+        "Food hall / market visits",
+        "Tile and museum experiences",
+        "Waterfront walks",
+        "Historic neighborhood exploration"
+      ],
+      "sample_day_modules": [
+        {
+          "module_name": "Viewpoints + historic neighborhoods",
+          "morning": "Start with a historic neighborhood walk.",
+          "afternoon": "Visit a viewpoint and café area.",
+          "evening": "Keep evening flexible for dinner in a lively neighborhood.",
+          "why_this_fits": "Good for users who like scenic streets, cafés, viewpoints, and relaxed urban wandering.",
+          "what_to_verify": [
+            "Current hours",
+            "Crowd levels",
+            "Restaurant availability"
+          ]
+        },
+        {
+          "module_name": "Food + waterfront",
+          "morning": "Explore central districts and café stops.",
+          "afternoon": "Add a food hall or market-style experience.",
+          "evening": "Walk near the waterfront or choose a relaxed dinner area.",
+          "why_this_fits": "Good for food-focused travelers who saved coastal or café-heavy content.",
+          "what_to_verify": [
+            "Food hall hours",
+            "Restaurant reservations",
+            "Transit timing"
+          ]
+        }
+      ],
+      "pacing_notes": "Lisbon is hilly, so itineraries should avoid too much backtracking and should include breaks between walking-heavy blocks.",
+      "booking_readiness": [
+        "Choose accommodation based on walking tolerance and transit access.",
+        "Book popular activities or day trips in advance if desired.",
+        "Verify restaurant hours and reservation needs."
+      ],
+      "verification_required": [
+        "hours",
+        "prices",
+        "restaurant availability",
+        "event schedules",
+        "transit disruptions"
+      ],
+      "source_notes": [
+        "Visit Portugal lists Lisbon experiences such as Bairro Alto dining, National Tile Museum, Oceanarium, and Pastel de Belém.",
+        "Lisbon tourism guides describe Lisbon as hilly and known for miradouros/viewpoints, historic neighborhoods, and Mercado da Ribeira/Cais do Sodré."
+      ]
+    },
+    {
+      "destination_id": "banff_canada",
+      "destination": "Banff",
+      "country": "Canada",
+      "summary": "Banff is a strong match for travelers interested in mountain scenery, hiking, turquoise/glacial lakes, wildlife, outdoor adventure, and scenic nature-focused itineraries.",
+      "best_for_tags": [
+        "mountains",
+        "hiking",
+        "nature",
+        "glacial lakes",
+        "wildlife",
+        "scenic drives",
+        "adventure travel"
+      ],
+      "travel_styles": [
+        "outdoor adventurer",
+        "nature-focused",
+        "active travel",
+        "scenic/aesthetic"
+      ],
+      "known_for_stable": [
+        "Rocky Mountain peaks",
+        "Glacial/turquoise lakes",
+        "Wildlife",
+        "Hiking and outdoor activities",
+        "Mountain town atmosphere",
+        "UNESCO World Heritage context"
+      ],
+      "areas_or_neighborhoods": [
+        {
+          "name": "Banff townsite",
+          "best_for": [
+            "base area",
+            "restaurants",
+            "shops",
+            "transit access"
+          ],
+          "notes": "Good starting point for first-time visitors."
+        },
+        {
+          "name": "Lake Louise area",
+          "best_for": [
+            "lake scenery",
+            "hiking",
+            "iconic views"
+          ],
+          "notes": "High-demand area; logistics and access should be verified."
+        },
+        {
+          "name": "Bow Valley / scenic routes",
+          "best_for": [
+            "viewpoints",
+            "scenic drives",
+            "wildlife-aware travel"
+          ],
+          "notes": "Weather and road conditions should be verified."
+        }
+      ],
+      "experience_categories": [
+        "Hiking",
+        "Lake viewpoints",
+        "Scenic drives",
+        "Wildlife-aware viewing",
+        "Photography stops",
+        "Town walks"
+      ],
+      "sample_day_modules": [
+        {
+          "module_name": "Scenic lake + relaxed town base",
+          "morning": "Start with a scenic lake or viewpoint experience.",
+          "afternoon": "Add a moderate walk or nature-focused activity.",
+          "evening": "Return to town for rest and dinner.",
+          "why_this_fits": "Good for users who saved mountains, lakes, and scenic outdoor content.",
+          "what_to_verify": [
+            "Trail conditions",
+            "Weather",
+            "Parking/shuttle access",
+            "Park pass requirements"
+          ]
+        },
+        {
+          "module_name": "Active hiking day",
+          "morning": "Choose one main hike based on ability and conditions.",
+          "afternoon": "Add a lighter viewpoint or town recovery time.",
+          "evening": "Keep evening flexible for rest.",
+          "why_this_fits": "Good for adventure travelers, but should be matched to fitness level and conditions.",
+          "what_to_verify": [
+            "Trail difficulty",
+            "Trail closures",
+            "Wildlife advisories",
+            "Weather"
+          ]
+        }
+      ],
+      "pacing_notes": "Banff itineraries should account for weather, trail difficulty, transit/parking logistics, and rest after active days.",
+      "booking_readiness": [
+        "Check park pass requirements.",
+        "Verify trail conditions and weather before hiking.",
+        "Plan shuttle/parking logistics for high-demand areas.",
+        "Book accommodation early during popular seasons."
+      ],
+      "verification_required": [
+        "weather",
+        "trail conditions",
+        "road conditions",
+        "park passes",
+        "shuttle schedules",
+        "wildlife advisories",
+        "availability"
+      ],
+      "source_notes": [
+        "Parks Canada describes Banff as Canada's first national park with Rocky Mountain peaks, glacial lakes, wildlife, and a mountain town.",
+        "Parks Canada states visitors to Banff National Park must purchase a national park entry pass."
+      ]
+    },
+    {
+      "destination_id": "porto_portugal",
+      "destination": "Porto",
+      "country": "Portugal",
+      "summary": "Porto is a strong match for travelers interested in riverside scenery, historic streets, azulejo tiles, wine/port culture, food, bridges, and walkable city-break itineraries.",
+      "best_for_tags": [
+        "wine",
+        "food",
+        "riverfront",
+        "historic center",
+        "tiles",
+        "bridges",
+        "walkable streets",
+        "romantic/aesthetic"
+      ],
+      "travel_styles": [
+        "food explorer",
+        "wine traveler",
+        "cultural explorer",
+        "aesthetic city break"
+      ],
+      "known_for_stable": [
+        "Historic center",
+        "River Douro",
+        "Port wine lodges on the Gaia side",
+        "Bridges and monuments",
+        "Tiles / azulejo visual character",
+        "Shopping streets and balconies"
+      ],
+      "areas_or_neighborhoods": [
+        {
+          "name": "Ribeira",
+          "best_for": [
+            "riverfront",
+            "historic atmosphere",
+            "walking"
+          ],
+          "notes": "Good for scenic city walks."
+        },
+        {
+          "name": "Vila Nova de Gaia riverfront",
+          "best_for": [
+            "port wine lodges",
+            "river views"
+          ],
+          "notes": "Useful for wine-focused travelers; verify tasting availability."
+        },
+        {
+          "name": "Baixa",
+          "best_for": [
+            "central sightseeing",
+            "shopping",
+            "cafés"
+          ],
+          "notes": "Good base for city exploration."
+        },
+        {
+          "name": "Foz do Douro",
+          "best_for": [
+            "coastal walks",
+            "ocean scenery"
+          ],
+          "notes": "Useful for users who saved coastal content."
+        }
+      ],
+      "experience_categories": [
+        "Riverside walks",
+        "Port wine lodge visits",
+        "Historic center exploration",
+        "Tile/architecture walks",
+        "Food experiences",
+        "Douro day trip modules"
+      ],
+      "sample_day_modules": [
+        {
+          "module_name": "Historic center + riverfront",
+          "morning": "Explore the historic center and tile/architecture highlights.",
+          "afternoon": "Walk toward the riverfront and bridge-view areas.",
+          "evening": "Keep evening flexible near the river or central dining area.",
+          "why_this_fits": "Good for users who like scenic streets, architecture, food, and romantic city breaks.",
+          "what_to_verify": [
+            "Current hours",
+            "Restaurant availability",
+            "Walking route accessibility"
+          ]
+        },
+        {
+          "module_name": "Wine + Douro context",
+          "morning": "Explore Gaia-side wine/port culture.",
+          "afternoon": "Add a riverfront walk or wine-related experience.",
+          "evening": "Return to Porto for a relaxed dinner.",
+          "why_this_fits": "Good for users interested in wine, river scenery, and cultural experiences.",
+          "what_to_verify": [
+            "Tasting availability",
+            "Reservations",
+            "Prices",
+            "Transport timing"
+          ]
+        }
+      ],
+      "pacing_notes": "Porto is best planned with walking-friendly clusters. Account for hills and avoid too many cross-city moves in one day.",
+      "booking_readiness": [
+        "Verify availability for wine tastings or Douro experiences.",
+        "Choose accommodation based on hill tolerance and desired atmosphere.",
+        "Book day trips in advance if the itinerary includes the Douro Valley."
+      ],
+      "verification_required": [
+        "tasting availability",
+        "prices",
+        "hours",
+        "transport schedules",
+        "restaurant availability"
+      ],
+      "source_notes": [
+        "Visit Portugal states Porto's historic center and the River Douro on the Gaia side, where Port Wine lodges are located, are classified as World Heritage.",
+        "Visit Porto highlights Porto attractions across culture, heritage, nature, food and wine, shopping, and more."
+      ]
+    },
+    {
+      "destination_id": "paris_france",
+      "destination": "Paris",
+      "country": "France",
+      "summary": "Paris is a strong match for travelers interested in museums, monuments, cafés, shopping, neighborhoods, Seine walks/cruises, food, art, and highly aesthetic urban itineraries.",
+      "best_for_tags": [
+        "museums",
+        "monuments",
+        "cafes",
+        "shopping",
+        "art",
+        "Seine",
+        "neighborhood walks",
+        "romantic/aesthetic"
+      ],
+      "travel_styles": [
+        "cultural explorer",
+        "food/café traveler",
+        "aesthetic city break",
+        "museum lover",
+        "shopping-focused"
+      ],
+      "known_for_stable": [
+        "Museums and monuments",
+        "Distinct districts/neighborhoods",
+        "Cafés and food culture",
+        "Shopping",
+        "Seine cruises/walks",
+        "Walking and cycling tours"
+      ],
+      "areas_or_neighborhoods": [
+        {
+          "name": "Le Marais",
+          "best_for": [
+            "cafés",
+            "shopping",
+            "historic streets",
+            "galleries"
+          ],
+          "notes": "Good for aesthetic/café-focused city wandering."
+        },
+        {
+          "name": "Saint-Germain-des-Prés / Latin Quarter",
+          "best_for": [
+            "cafés",
+            "bookstores",
+            "culture",
+            "walks"
+          ],
+          "notes": "Good for literary/café interests."
+        },
+        {
+          "name": "Montmartre",
+          "best_for": [
+            "views",
+            "artistic atmosphere",
+            "walks"
+          ],
+          "notes": "Good for scenic and artistic content."
+        },
+        {
+          "name": "Louvre / central Paris",
+          "best_for": [
+            "major museums",
+            "monuments",
+            "first-time routes"
+          ],
+          "notes": "Good for classic Paris itinerary modules."
+        },
+        {
+          "name": "Canal Saint-Martin",
+          "best_for": [
+            "casual cafés",
+            "local-feeling walks"
+          ],
+          "notes": "Good for relaxed urban exploration."
+        }
+      ],
+      "experience_categories": [
+        "Museum visits",
+        "Café and bakery stops",
+        "Neighborhood walks",
+        "Seine walks or cruises",
+        "Shopping",
+        "Art and architecture experiences"
+      ],
+      "sample_day_modules": [
+        {
+          "module_name": "Classic culture + café day",
+          "morning": "Start with one major museum or monument area.",
+          "afternoon": "Add café time and a walk through a nearby neighborhood.",
+          "evening": "Keep evening flexible for dinner or a Seine-side walk.",
+          "why_this_fits": "Good for users who like museums, cafés, architecture, and aesthetic city walks.",
+          "what_to_verify": [
+            "Museum hours",
+            "Ticket availability",
+            "Restaurant reservations"
+          ]
+        },
+        {
+          "module_name": "Neighborhood-focused slow day",
+          "morning": "Explore a café and bookstore-friendly neighborhood.",
+          "afternoon": "Add shopping, galleries, or a park/walk.",
+          "evening": "Choose a relaxed dinner area nearby.",
+          "why_this_fits": "Good for users who prefer slower, less checklist-driven Paris experiences.",
+          "what_to_verify": [
+            "Current shop hours",
+            "Exhibition schedules",
+            "Transit disruptions"
+          ]
+        }
+      ],
+      "pacing_notes": "Paris itineraries should avoid too many cross-city movements in one day. Anchor each day around a district or nearby cluster.",
+      "booking_readiness": [
+        "Book high-demand museums, monuments, or activities in advance when needed.",
+        "Choose accommodation by preferred neighborhood and transit access.",
+        "Verify current museum hours and ticket availability."
+      ],
+      "verification_required": [
+        "ticket availability",
+        "museum hours",
+        "restaurant availability",
+        "prices",
+        "event schedules",
+        "transit disruptions"
+      ],
+      "source_notes": [
+        "Paris je t'aime official tourist office highlights Paris districts, museums and monuments, Seine cruises, shopping, restaurants, and visitor planning resources."
+      ]
+    }
+  ]
+}
